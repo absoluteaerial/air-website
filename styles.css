@@ -269,6 +269,16 @@ p { margin-top: 0; }
   margin-top: 10px;
 }
 
+/* ---------- Photos ---------- */
+.photo {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  display: block;
+}
+.photo-wide { width: 100%; margin-top: 20px; }
+.photo-med { max-width: 680px; margin: 20px auto 0; }
+.photo-small { max-width: 300px; margin: 20px auto 0; }
+
 /* ---------- FAQ ---------- */
 .faq details {
   border: 1px solid var(--border);

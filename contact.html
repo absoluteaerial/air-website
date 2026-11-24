@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact | Absolute Aerial Inspections &amp; Repairs</title>
+<meta name="description" content="Request a commercial roof inspection from Absolute Aerial Inspections & Repairs in Belleville, Michigan. Call 734-658-2384 or send us a message.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html">
+      <div class="brand-name"><span class="air">AIR</span> &bull; Absolute Aerial Inspections &amp; Repairs</div>
+      <div class="brand-tag">The absolute truth about your roof.</div>
+    </a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="roof-score.html">AIR Roof Score</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+    <a class="header-phone" href="tel:7346582384">734-658-2384</a>
+  </div>
+</header>
+
+<section class="page-head">
+  <div class="wrap">
+    <h1>Request an inspection</h1>
+    <p>Tell us about your building and we&rsquo;ll get back to you. Prefer to talk? Call 734-658-2384.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div class="contact-details">
+        <h2>Absolute Aerial Inspections &amp; Repairs LLC</h2>
+        <p>Belleville, Michigan &mdash; serving Southeast Michigan</p>
+        <p>Phone:<br><a class="phone-big" href="tel:7346582384">734-658-2384</a></p>
+        <p>Email:<br>
+          <a href="mailto:harve@aerialinspectionsair.com">harve@aerialinspectionsair.com</a><br>
+          <a href="mailto:dylan@aerialinspectionsair.com">dylan@aerialinspectionsair.com</a>
+        </p>
+        <p>Website:<br>aerialinspectionsair.com</p>
+      </div>
+
+      <div>
+        <div class="form-note">Fill out the form and hit Send request &mdash; it will open your email app with your message addressed to us, ready to send. Prefer to talk? Call <a href="tel:7346582384">734-658-2384</a>.</div>
+        <form id="request-form">
+          <label for="f-name">Name</label>
+          <input id="f-name" name="name" type="text" required autocomplete="name">
+
+          <label for="f-company">Company / property name</label>
+          <input id="f-company" name="company" type="text" autocomplete="organization">
+
+          <label for="f-phone">Phone</label>
+          <input id="f-phone" name="phone" type="tel" autocomplete="tel">
+
+          <label for="f-email">Email</label>
+          <input id="f-email" name="email" type="email" autocomplete="email">
+
+          <label for="f-address">Building address</label>
+          <input id="f-address" name="address" type="text" autocomplete="street-address">
+
+          <label for="f-message">Message</label>
+          <textarea id="f-message" name="message" placeholder="Tell us about the roof: building type, approximate size, age if you know it, and any leaks or concerns."></textarea>
+
+          <button class="btn" type="submit">Send request</button>
+        </form>
+        <div class="form-sent" id="form-sent" role="status">
+          <strong>Your email app should now be open</strong> with your request addressed to us &mdash; hit send there to deliver it. Thanks &mdash; we&rsquo;ll be in touch soon. If it&rsquo;s urgent, call us at <a href="tel:7346582384">734-658-2384</a>.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-name">Absolute Aerial Inspections &amp; Repairs LLC</p>
+    <p class="footer-tag">The absolute truth about your roof.</p>
+    <p>Belleville, Michigan &mdash; serving Southeast Michigan</p>
+    <p class="footer-contact"><a href="tel:7346582384">734-658-2384</a> &nbsp;|&nbsp; <a href="mailto:harve@aerialinspectionsair.com">harve@aerialinspectionsair.com</a> &nbsp;|&nbsp; <a href="mailto:dylan@aerialinspectionsair.com">dylan@aerialinspectionsair.com</a></p>
+    <p class="footer-small">Commercial roof inspections, reports, and repairs in Southeast Michigan.</p>
+  </div>
+</footer>
+
+<script>
+document.getElementById('request-form').addEventListener('submit', function (e) {
+  e.preventDefault();
+  var get = function (id) { return document.getElementById(id).value.trim(); };
+  var name = get('f-name');
+  var company = get('f-company');
+  var phone = get('f-phone');
+  var email = get('f-email');
+  var address = get('f-address');
+  var message = get('f-message');
+
+  var subject = 'Inspection request' + (company ? ' — ' + company : (name ? ' — ' + name : ''));
+  var lines = [];
+  if (name) lines.push('Name: ' + name);
+  if (company) lines.push('Company / property: ' + company);
+  if (phone) lines.push('Phone: ' + phone);
+  if (email) lines.push('Email: ' + email);
+  if (address) lines.push('Building address: ' + address);
+  lines.push('');
+  lines.push(message || '(No message entered.)');
+
+  var mailto = 'mailto:harve@aerialinspectionsair.com'
+    + '?subject=' + encodeURIComponent(subject)
+    + '&body=' + encodeURIComponent(lines.join('\n'));
+  window.location.href = mailto;
+  document.getElementById('form-sent').style.display = 'block';
+});
+</script>
+
+</body>
+</html>
